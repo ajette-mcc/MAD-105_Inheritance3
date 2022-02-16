@@ -1,3 +1,22 @@
+import java.text.DecimalFormat
+
+/**************************************************************
+ *  Residential Class for MAD-105 Inheritance Assignment due 28-Feb-2022
+ *  This class creates the Residential Class, which inherits the Customer Class
+ *  and has a function: calculate, which calculates the weekly lawn
+ *  maintenance cost for Residential customers
+ *
+ *  @author:  Al Jette
+ *  Date:  17-Feb-2022
+ *  @param:  residentialRate: Residential rate to maintain lawn
+ *           senior: if Senior, apply Senior discount
+ *  Inherited from customer Class:  customerName, customerPhone, customerAddress & squareFootage
+ *
+ *  Function calculate Returns:  Weekly maintenance cost
+ *
+ *  Mods:
+ **************************************************************/
+
 class residential (
     residentialRate: Double,
     senior: Boolean,
@@ -32,15 +51,16 @@ class residential (
 
     // Function to calculate cost of weekly lawn maintenance and display
     fun calculate(): Double {
+        val Dollar = DecimalFormat("$###,###.00")
         var seniorDiscount: Double = 1.00
         if (this.senior == true) seniorDiscount = 0.85
 
-        var weeklyCost: Double = this.squareFootage * this.residentialRate * seniorDiscount
+        var weeklyCost: Double = (this.squareFootage / 1000) * this.residentialRate * seniorDiscount
 
         println("Customer ${this.customerName}")
         println("  Address: ${this.customerAddress}    Phone: ${this.customerPhone}")
         println("  Square Footage: ${this.squareFootage},  Senior Discount: ${this.senior}")
-        println("  Weekly Maintenance cost: " + weeklyCost)
+        println("  Weekly Maintenance cost: " + Dollar.format(weeklyCost))
         println()
 
         return weeklyCost
