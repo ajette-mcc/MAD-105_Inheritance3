@@ -12,7 +12,6 @@ import java.text.DecimalFormat
  *  Mods:
  **************************************************************/
 
-
 fun main() {
     // Define current rates (fixed values) and customer(s)
     val currentCommercialRate: Double = 5.00
