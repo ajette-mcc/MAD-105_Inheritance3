@@ -19,6 +19,7 @@ fun main() {
     val Dollar = DecimalFormat("$###,###.00")
     var cust_commercial = commercial("xx", currentCommercialRate, "", "cc", "555", "zz", 100.00)
     var cust_residential = residential(currentResidentialRate, senior = false, "rc", "666", "zz", 0.00)
+// Below were test customer data, to simplify testing the code
 //    var cust1 = customer("Jane", "555-Cust1", "1 Cust Street", 1000.00)
 //    var cust2 = commercial("Menards", currentCommercialRate, "y", "Bill", "555-Cust2", "2 Cust St", 10000.00)
 //    var cust3 = residential(currentResidentialRate, senior = true, "Fred", "555-Cust3", "3 Cust St", 3000.00)
@@ -28,10 +29,10 @@ fun main() {
     var quote: Double = 0.00
     var choice: Int = 0
 
+// More test customer code
 //    cust2.calculate()
 //    cust3.calculate()
 //    quote = cust4.calculate()
-
 //    println("Quote for ${cust4.customerName} is: " + Dollar.format(quote))
 
     while (choice != 3) {

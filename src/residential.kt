@@ -40,7 +40,6 @@ class residential (
         }
 
     init {
-        println("New Residential Customer $customerName")
         this.customerName = customerName
         this.customerPhone = customerPhone
         this.customerAddress = customerAddress
@@ -49,7 +48,21 @@ class residential (
         this.senior = senior
     }
 
-    // Function to calculate cost of weekly lawn maintenance and display
+    /**************************************************************
+     *  Residential Class Function: calculate, which calculates the weekly lawn
+     *  maintenance cost for Residential customers
+     *
+     *  @author:  Al Jette
+     *  Date:  21-Feb-2022
+     *  @param:  residentialRate: Residential rate to maintain lawn
+     *           senior: if Senior, apply Senior discount
+     *  Inherited from customer Class:  customerName, customerPhone, customerAddress & squareFootage
+     *
+     *  Function calculate Returns:  Weekly maintenance cost
+     *
+     *  Mods:
+     **************************************************************/
+
     fun calculate(): Double {
         val Dollar = DecimalFormat("$###,###.00")
         var seniorDiscount: Double = 1.00

@@ -42,7 +42,6 @@ class commercial (
         set(value) {field=value}
 
     init {
-        println("New Commercial Customer $customerName")
         this.customerName = customerName
         this.customerPhone = customerPhone
         this.customerAddress = customerAddress
@@ -52,7 +51,22 @@ class commercial (
         this.multipleProperty = multipleProperty
     }
 
-    // Function to calculate cost of weekly lawn maintenance and display
+    /**************************************************************
+     *  Commercial Class Function: calculate, which calculates the weekly lawn
+     *  maintenance cost for Commercial customers
+     *
+     *  @author:  Al Jette
+     *  Date:  21-Feb-2022
+     *  @param:  propertyName:  Name of property for commercial customer
+     *           commercialRate: Commercial rate to maintain lawn
+     *           multipleProperty: # properties we maintain for this customer (allows for multi-property discount)
+     *  Inherited from customer Class:  customerName, customerPhone, customerAddress & squareFootage
+     *
+     *  Function calculate Returns:  Weekly maintenance cost
+     *
+     *  Mods:
+     **************************************************************/
+    
     fun calculate(): Double {
         val Dollar = DecimalFormat("$###,###.00")
         var multiPropertyDiscount: Double = 1.00
