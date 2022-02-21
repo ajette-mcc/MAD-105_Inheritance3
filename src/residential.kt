@@ -57,6 +57,7 @@ class residential (
 
         var weeklyCost: Double = (this.squareFootage / 1000) * this.residentialRate * seniorDiscount
 
+        println("*** Text below printed from Residential Class Function ***")
         println("Customer ${this.customerName}")
         println("  Address: ${this.customerAddress}    Phone: ${this.customerPhone}")
         println("  Square Footage: ${this.squareFootage},  Senior Discount: ${this.senior}")

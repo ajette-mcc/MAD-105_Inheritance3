@@ -21,7 +21,7 @@ import java.text.DecimalFormat
 class commercial (
     propertyName: String,
     commercialRate: Double,
-    multipleProperty: Int,
+    multipleProperty: String,
     customerName: String,                // customer name through square footage inherited from Customer Class
     customerPhone: String,
     customerAddress: String,
@@ -37,7 +37,7 @@ class commercial (
         get() = field
         set(value) {field=value}
 
-    var multipleProperty: Int = 1
+    var multipleProperty: String = ""
         get() = field
         set(value) {field=value}
 
@@ -56,13 +56,14 @@ class commercial (
     fun calculate(): Double {
         val Dollar = DecimalFormat("$###,###.00")
         var multiPropertyDiscount: Double = 1.00
-        if (this.multipleProperty > 1.00) multiPropertyDiscount = 0.90
+        if (this.multipleProperty == "y") multiPropertyDiscount = 0.90
         var weeklyCost: Double = (this.squareFootage / 1000) * this.commercialRate * multiPropertyDiscount
 
+        println("*** Text below printed from Commerical Class Function ***")
         println("Business Customer Contact: ${this.customerName}")
         println("  Business Name: ${this.propertyName}")
         println("  Address: ${this.customerAddress}    Phone: ${this.customerPhone}")
-        println("  Square Footage: ${this.squareFootage},  Number of Properties: ${this.multipleProperty}")
+        println("  Square Footage: ${this.squareFootage},  Multi-property discount: ${this.multipleProperty}")
         println("  Weekly Maintenance cost: " +Dollar.format(weeklyCost))
         println()
         return weeklyCost
